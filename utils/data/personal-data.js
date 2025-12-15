@@ -3,14 +3,18 @@ export const personalData = {
   profile: '/profile.jpeg',
   designation: "Software ENGINEER",
   description:
-      "I am a passionate Computer Science graduate with a Master’s degree in Data Analytics.\n" +
-      "I have a solid background in software development, data structures, and algorithms. My\n" +
-      "experience in competitive programming has sharpened my ability to solve complex\n" +
-      "problems efficiently and develop optimized solutions under challenging constraints.\n" +
-      "During my academic journey, I developed proficiency in designing scalable systems,\n" +
-      "analysing data, and leveraging modern tools and technologies to extract insights. My\n" +
-      "Master's in Data Analytics has equipped me with the ability to work with large datasets,\n" +
-      "apply statistical and machine learning techniques." ,
+      "Computer Science graduate with a Master’s in Data Analytics and strong foundations in\n" +
+      "algorithms, data structures and scalable system design.\n" +
+      "Skilled in C++, JavaScript, Java, SQL\n" +
+      "and modern full-stack development Spring Boot, Laravel, React, Next.js, Supabase with\n" +
+      "hands-on experience in building secure, high-performance applications and optimising data\n" +
+      "workflows.\n" +
+      "A background in competitive programming has strengthened my problem-solving\n" +
+      "skills and ability to deliver efficient solutions under tight constraints.\n" +
+      "Currently seeking software\n" +
+      "engineering opportunities where I can apply my technical expertise to develop reliable,\n" +
+      "data-driven systems at scale.",
+
   email: 'mdsamialsohan@gmail.com',
   phone: '+447776023969',
   address: 'High Road, Wood Green, London - UK',
@@ -21,5 +25,5 @@ export const personalData = {
   stackOverflow: 'https://stackoverflow.com/users/30031778/samial-hasan-sohan',
   leetcode: 'https://leetcode.com/u/SAMIALSOHAN/',
   devUsername: "samialsohan",
-  resume: "https://drive.google.com/file/d/1bmRokgkect8D-WIFPyPQYe_uQv0zoFqc/view?usp=sharing"
+  resume: "https://drive.google.com/file/d/1EIn4WlvgDy5ZEAFmSsvi6exU4bKvjtkn/view?usp=sharing"
 }
