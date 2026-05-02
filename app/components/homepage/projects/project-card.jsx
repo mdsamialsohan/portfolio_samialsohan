@@ -37,7 +37,7 @@ function ProjectCard({ project }) {
             <span className="text-gray-400">{`',`}</span>
           </div>
 
-          <div className="ml-4 lg:ml-8 mr-2">
+          <div className="ml-4 lg:ml-8 mr-2 line-clamp-2 overflow-hidden">
             <span className=" text-white">tools:</span>
             <span className="text-gray-400">{` ['`}</span>
             {
@@ -60,7 +60,7 @@ function ProjectCard({ project }) {
           </div>
           <div className="ml-4 lg:ml-8 mr-2">
             <span className="text-white">Description:</span>
-            <span className="text-cyan-400">{' ' + project.description}</span>
+            <span className="text-cyan-400 line-clamp-3 block overflow-hidden">{' ' + project.description}</span>
             <span className="text-gray-400">,</span>
           </div>
           <div>
