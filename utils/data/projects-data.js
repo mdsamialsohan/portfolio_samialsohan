@@ -1,21 +1,21 @@
 export const projectsData = [
     {
         id: 1,
+        name: 'TaskFlow — Task Management REST API',
+        description: 'A backend REST API for managing tasks, projects, and team assignments with enforced business rules and full CI/CD. Designed a layered architecture (Controller → Service → Repository) with DTOs separating the API contract from JPA entities. Implemented status lifecycle rules (TODO → IN_PROGRESS → DONE/CANCELLED), flexible multi-filter search, input validation, and a global exception handler returning structured 404/400/422 responses. Wrote integration tests against a real PostgreSQL using Testcontainers and MockMvc tests for the HTTP layer. Containerized with a multi-stage Dockerfile, automated tests via GitHub Actions, and deployed continuously to Render.',
+        tools: ['Java 21', 'Spring Boot 4', 'PostgreSQL', 'Hibernate / Spring Data JPA', 'Flyway', 'Docker', 'Docker Compose', 'JUnit 5', 'Testcontainers', 'Maven', 'Git', 'GitHub Actions', 'Render'],
+        code: 'https://github.com/mdsamialsohan/taskflow',
+        role: 'Backend Developer',
+        demo: 'https://taskflow-e4s5.onrender.com',
+    },
+    {
+        id: 2,
         name: 'Sales Management System',
         description: 'A web platform to streamline sales operations, track inventory, and manage customer dues. Developed RESTful API with Laravel to handle sales, inventory, and customer data secured using Sanctum-based authentication. Built multi-page Next.js application leveraging dynamic routing and server-side rendering for fast data retrieval with dynamic dashboards, invoice views, and customer profiles.',
         tools: ['Laravel', 'NextJS', 'CSS', 'Tailwind CSS', 'REST API', 'MySQl', 'Sanctum', 'Git', 'CPanel', 'cron-job'],
         code: '',
         role: 'Full Stack Developer',
         demo: 'https://demo.ezdokani.com/',
-    },
-    {
-        id: 2,
-        name: 'Employee Management System',
-        description: 'A full-stack web application for managing employee data, built with React and Supabase. The system features secure authentication using Supabase Auth with Row Level Security (RLS) to ensure data protection. It includes a well-designed PostgreSQL schema with migrations and real-time updates managed via the Supabase CLI. Supabase Storage is used for uploading and managing employee documents, while Edge Functions handle automated backend tasks for improved efficiency and scalability.',
-        tools: ['React', 'Supabase', 'PostgreSQL'],
-        role: 'Full Stack Developer',
-        code: '',
-        demo: 'https://github.com/mdsamialsohan/EmployeeManagementFronend',
     },
     {
         id: 3,
@@ -28,12 +28,12 @@ export const projectsData = [
     },
     {
         id: 4,
-        name: 'Analysing Sakila-a movie rental database with MySQL',
-        description: "This project explores Sakila Database using SQL Magic (%%sql) in Jupyter Notebook while connecting to a MySQL database hosted on XAMPP. It includes various Data Manipulation (DML) and Aggregation queries, providing insights into customer rentals, payments, and movie statistics.",
-        tools: ['MySQL', 'Jupyter Notebook', 'XAMPP', 'SQL Magic'],
-        role: 'Backend Developer',
+        name: 'Employee Management System',
+        description: 'A full-stack web application for managing employee data, built with React and Supabase. The system features secure authentication using Supabase Auth with Row Level Security (RLS) to ensure data protection. It includes a well-designed PostgreSQL schema with migrations and real-time updates managed via the Supabase CLI. Supabase Storage is used for uploading and managing employee documents, while Edge Functions handle automated backend tasks for improved efficiency and scalability.',
+        tools: ['React', 'Supabase', 'PostgreSQL'],
+        role: 'Full Stack Developer',
         code: '',
-        demo: 'https://github.com/mdsamialsohan/SQL_Projects',
+        demo: 'https://github.com/mdsamialsohan/EmployeeManagementFronend',
     },
 ];
 
