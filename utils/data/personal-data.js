@@ -1,5 +1,5 @@
 export const personalData = {
-  name: "Afsana Rahman",
+  name: "MD SAMIAL HASAN SOHAN",
   profile: '/profile.jpeg',
   designation: "Software Engineer",
   description:
