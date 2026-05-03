@@ -1,39 +1,84 @@
 // @flow strict
 
 import { personalData } from "@/utils/data/personal-data";
-import Image from "next/image";
+import { HiOutlineLocationMarker, HiOutlineMail } from "react-icons/hi";
+import { MdOutlineSchool, MdOutlineWorkOutline } from "react-icons/md";
 
+const highlights = [
+  {
+    icon: <HiOutlineLocationMarker size={20} />,
+    label: "Location",
+    value: "London, UK",
+  },
+  {
+    icon: <MdOutlineSchool size={20} />,
+    label: "Education",
+    value: "MSc Data Analytics",
+  },
+  {
+    icon: <HiOutlineMail size={20} />,
+    label: "Email",
+    value: personalData.email,
+  },
+  {
+    icon: <MdOutlineWorkOutline size={20} />,
+    label: "Status",
+    value: "Open to Work",
+  },
+];
 
 function AboutSection() {
+  const paragraphs = personalData.description
+    .split("\n")
+    .map(s => s.trim())
+    .filter(Boolean)
+    .reduce((acc, sentence) => {
+      const last = acc[acc.length - 1];
+      if (last && last.length < 120) {
+        acc[acc.length - 1] = last + " " + sentence;
+      } else {
+        acc.push(sentence);
+      }
+      return acc;
+    }, []);
+
   return (
-    <div id="about" className="my-12 lg:my-16 relative">
-      <div className="hidden lg:flex flex-col items-center absolute top-16 -right-8">
-        <span className="bg-[#1a1443] w-fit text-white rotate-90 p-2 px-5 text-xl rounded-md">
-          ABOUT ME
-        </span>
-        <span className="h-36 w-[2px] bg-[#1a1443]"></span>
+    <div id="about" className="mt-6 mb-16 lg:mb-24">
+      {/* Section header */}
+      <div className="flex items-center gap-4 mb-12">
+        <h2 className="text-3xl md:text-4xl font-bold text-white shrink-0">About Me</h2>
+        <div className="flex-1 h-[1px] bg-gradient-to-r from-[#1a1443] via-violet-500/30 to-transparent" />
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
-        <div className="order-2 lg:order-1">
-          <p className="font-medium mb-5 text-[#16f2b3] text-xl uppercase">
-            Who I am?
-          </p>
-          <p className="text-gray-200 text-sm lg:text-lg">
-            {personalData.description}
-          </p>
+
+      <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
+
+        {/* Description — wider column */}
+        <div className="lg:col-span-3 flex flex-col gap-5">
+          {paragraphs.map((para, i) => (
+            <p key={i} className="text-gray-400 text-sm md:text-base leading-7">
+              {para}
+            </p>
+          ))}
         </div>
-        <div className="flex justify-center order-1 lg:order-2">
-          <Image
-            src={personalData.profile}
-            width={280}
-            height={280}
-            alt="Abu Said"
-            className="rounded-lg transition-all duration-1000 grayscale hover:grayscale-0 hover:scale-110 cursor-pointer"
-          />
+
+        {/* Info cards — narrower column */}
+        <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4">
+          {highlights.map(({ icon, label, value }) => (
+            <div
+              key={label}
+              className="flex items-start gap-4 p-4 rounded-xl border border-[#1b2c68a0] bg-gradient-to-br from-[#0d1224] to-[#0a0d37] hover:border-violet-500/50 transition-colors duration-300"
+            >
+              <div className="mt-0.5 text-[#16f2b3] shrink-0">{icon}</div>
+              <div className="flex flex-col gap-0.5 min-w-0">
+                <span className="text-xs text-gray-500 uppercase tracking-wider">{label}</span>
+                <span className="text-sm text-white font-medium truncate">{value}</span>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
   );
-};
+}
 
 export default AboutSection;

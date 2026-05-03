@@ -1,19 +1,12 @@
 export const personalData = {
   name: "MD SAMIAL HASAN SOHAN",
   profile: '/profile.jpeg',
-  designation: "Software ENGINEER",
+  designation: "Software Engineer",
   description:
-      "Computer Science graduate with a Master’s in Data Analytics and strong foundations in\n" +
-      "algorithms, data structures and scalable system design.\n" +
-      "Skilled in C++, JavaScript, Java, SQL\n" +
-      "and modern full-stack development Spring Boot, Laravel, React, Next.js, Supabase with\n" +
-      "hands-on experience in building secure, high-performance applications and optimising data\n" +
-      "workflows.\n" +
-      "A background in competitive programming has strengthened my problem-solving\n" +
-      "skills and ability to deliver efficient solutions under tight constraints.\n" +
-      "Currently seeking software\n" +
-      "engineering opportunities where I can apply my technical expertise to develop reliable,\n" +
-      "data-driven systems at scale.",
+      "I am a Software Engineer with a BSc in Computer Science and Engineering and an MSc in Data Analytics from the University of Portsmouth, UK.\n" +
+      "With over two years of professional experience across full-stack web development and backend engineering, I have worked at Cloudesh Technology and Impress IT Solutions — delivering production-ready applications, RESTful APIs, and data-driven solutions.\n" +
+      "My core stack includes Java, Spring Boot, Laravel, React, and Next.js, backed by solid experience with PostgreSQL, MySQL, and cloud deployment. I am equally comfortable working across the backend, frontend, and data layers.\n" +
+      "I am currently open to software engineering roles where I can tackle meaningful challenges, collaborate with driven teams, and keep building things that matter.",
 
   email: 'mdsamialsohan@gmail.com',
   phone: '+447776023969',

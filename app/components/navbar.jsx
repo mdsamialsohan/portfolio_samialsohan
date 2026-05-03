@@ -1,44 +1,66 @@
+'use client';
 // @flow strict
 import Link from "next/link";
+import { useState } from "react";
+import { HiMenuAlt3, HiX } from "react-icons/hi";
 
+const navLinks = [
+  { label: "ABOUT",      href: "/#about"      },
+  { label: "EXPERIENCE", href: "/#experience" },
+  { label: "SKILLS",     href: "/#skills"     },
+  { label: "EDUCATION",  href: "/#education"  },
+  { label: "BLOGS",      href: "/#blogs"      },
+  { label: "PROJECTS",   href: "/#projects"   },
+];
 
 function Navbar() {
-  return (
-    <nav className="bg-transparent">
-      <div className="flex items-center justify-between py-5">
-        <div className="flex flex-shrink-0 items-center">
-          <Link
-            href="/"
-            className=" text-[#16f2b3] text-3xl font-bold">
-            MD Samial Hasan Sohan
-          </Link>
-        </div>
+  const [open, setOpen] = useState(false);
 
-        <ul className="mt-4 flex h-screen max-h-0 w-full flex-col items-start text-sm opacity-0 md:mt-0 md:h-auto md:max-h-screen md:w-auto md:flex-row md:space-x-1 md:border-0 md:opacity-100" id="navbar-default">
-          <li>
-            <Link className="block px-4 py-2 no-underline outline-none hover:no-underline" href="/#about">
-              <div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">ABOUT</div>
-            </Link>
-          </li>
-          <li>
-            <Link className="block px-4 py-2 no-underline outline-none hover:no-underline" href="/#experience"><div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">EXPERIENCE</div></Link>
-          </li>
-          <li>
-            <Link className="block px-4 py-2 no-underline outline-none hover:no-underline" href="/#skills"><div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">SKILLS</div></Link>
-          </li>
-          <li>
-            <Link className="block px-4 py-2 no-underline outline-none hover:no-underline" href="/#education"><div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">EDUCATION</div></Link>
-          </li>
-          <li>
-            <Link className="block px-4 py-2 no-underline outline-none hover:no-underline" href="/blog"><div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">BLOGS</div></Link>
-          </li>
-          <li>
-            <Link className="block px-4 py-2 no-underline outline-none hover:no-underline" href="/#projects"><div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">PROJECTS</div></Link>
-          </li>
+  return (
+    <nav className="bg-transparent relative z-50">
+      <div className="flex items-center justify-end py-5">
+
+        {/* Desktop menu */}
+        <ul className="hidden md:flex md:flex-row md:gap-1">
+          {navLinks.map(({ label, href }) => (
+            <li key={label}>
+              <Link
+                href={href}
+                className="block px-4 py-2 text-sm text-white transition-colors duration-300 hover:text-pink-500"
+              >
+                {label}
+              </Link>
+            </li>
+          ))}
         </ul>
+
+        {/* Mobile hamburger button */}
+        <button
+          className="md:hidden text-white hover:text-pink-500 transition-colors duration-300"
+          onClick={() => setOpen(!open)}
+          aria-label="Toggle menu"
+        >
+          {open ? <HiX size={26} /> : <HiMenuAlt3 size={26} />}
+        </button>
       </div>
+
+      {/* Mobile dropdown */}
+      {open && (
+        <div className="md:hidden absolute top-full right-0 w-48 bg-[#0d1224] border border-[#1b2c68a0] rounded-xl shadow-xl overflow-hidden">
+          {navLinks.map(({ label, href }) => (
+            <Link
+              key={label}
+              href={href}
+              onClick={() => setOpen(false)}
+              className="block px-5 py-3 text-sm text-white hover:text-pink-500 hover:bg-[#1a1443] transition-colors duration-200"
+            >
+              {label}
+            </Link>
+          ))}
+        </div>
+      )}
     </nav>
   );
-};
+}
 
 export default Navbar;
